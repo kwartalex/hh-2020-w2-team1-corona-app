@@ -16,14 +16,14 @@ const HeaderStyled = styled.header`
   margin: 0;
 
   h1 {
-    color: var(--secondary);
+    color: white;
     text-align: center;
     margin-bottom: 0;
     margin-top: 4px;
   }
 
   p {
-    color: var(--secondary);
+    color: white;
     text-align: center;
     margin-top: 0;
   }

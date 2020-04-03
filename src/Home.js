@@ -11,17 +11,20 @@ export default function Home() {
         Coronavirus-Epidemie) ist ein Ausbruch der neuartigen Atemwegserkrankung
         COVID-19 (oder „Covid-19“, für englisch corona virus disease 2019).
         Diese Erkrankung war erstmals Ende Dezember 2019 in der Millionenstadt
-        Wuhan der chinesischen Provinz Hubei auffällig geworden, entwickelte
-        sich im Januar 2020 in China zur Epidemie und breitete sich schließlich
-        weltweit aus. Der Ausbruch wurde durch das bis dahin unbekannte
-        Coronavirus SARS-CoV-2 ausgelöst. Dieses Virus wird auch als neuartiges
-        Coronavirus bezeichnet.
       </p>
+      <iframe
+        width="100%"
+        height="36%"
+        src="https://www.youtube.com/embed/hMopOpiNB1s"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </ContentWrapper>
   )
 }
 
 const ContentWrapper = styled.main`
-  padding: 6px;
+  padding: 12px;
   overflow: scroll;
 `
