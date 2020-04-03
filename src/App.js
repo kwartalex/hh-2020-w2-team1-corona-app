@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from 'react'
+import GlobalStyles from './GlobalStyles'
+import Header from './Header'
+import Footer from './Footer'
+import Home from './Home'
 
-function App() {
-  return <div></div>;
+export default function App() {
+  const [currentPage, setCurrentPage] = useState('home')
+
+  return (
+    <>
+      <GlobalStyles />
+      <Header />
+      {currentPage === 'home' && <Home />}
+      <Footer setCurrentPage={setCurrentPage} />
+    </>
+  )
 }
-
-export default App;
