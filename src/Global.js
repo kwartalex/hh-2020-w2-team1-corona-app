@@ -7,13 +7,14 @@ export default function Global() {
 
   useEffect(() => {
     fetch('https://corona.lmao.ninja/countries?sort=country')
-      .then(response => response.json())
-      .then(data => setCoronaData(data.reverse()))
+      .then((response) => response.json())
+      .then((data) => setCoronaData(data.reverse()))
   }, [])
 
   return (
     <ContentWrapper>
-      {countryData.map(country => (
+      <h2>Select a country for more information</h2>
+      {countryData.map((country) => (
         <CountryCard key={country.country} country={country} />
       ))}
     </ContentWrapper>
@@ -21,6 +22,6 @@ export default function Global() {
 }
 
 const ContentWrapper = styled.main`
-  padding: 6px;
+  padding: 12px;
   overflow: scroll;
 `

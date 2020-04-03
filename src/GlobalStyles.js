@@ -7,7 +7,7 @@ export default createGlobalStyle`
 
 #root {
     display: grid;
-    grid-template-rows: 60px auto 48px;
+    grid-template-rows: 64px auto 48px;
     height: 100vh;
 }
 
@@ -16,10 +16,13 @@ export default createGlobalStyle`
     font-family: sans-serif;
   }
 
+  p {
+    line-height: 150%;
+  }
+
   :root {
-    --primary: #f8b400;
-    --secondary: #004445;
-    --tertiary: #2c786c;
-    --quaternary: #faf5e4;
+    --primary: #004445;
+    --secondary: #2c786c;
+    --tertiary: #faf5e4;
   }
 `

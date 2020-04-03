@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components/macro'
 
 import stayhome from './img/stayhome.png'
-import global from './img/pandemic.png'
-import germany from './img/search.png'
+import global from './img/global.png'
+import germany from './img/germany.png'
 
 export default function Footer({ setCurrentPage }) {
   const buttonData = [
@@ -15,7 +15,7 @@ export default function Footer({ setCurrentPage }) {
   return (
     <FooterStyled>
       <nav>
-        {buttonData.map(item => (
+        {buttonData.map((item) => (
           <button key={item.id} onClick={() => setCurrentPage(item.id)}>
             <img src={item.images} alt={item.id} />
           </button>
