@@ -16,8 +16,8 @@ export default function Footer({ setCurrentPage }) {
     <FooterStyled>
       <nav>
         {buttonData.map(item => (
-          <button key={item.id} onCLick={() => setCurrentPage(item.id)}>
-            <img src={item.images} />
+          <button key={item.id} onClick={() => setCurrentPage(item.id)}>
+            <img src={item.images} alt={item.id} />
           </button>
         ))}
       </nav>
