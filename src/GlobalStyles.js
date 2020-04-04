@@ -18,6 +18,7 @@ export default createGlobalStyle`
 
   p {
     line-height: 150%;
+    font-weight: 300;
   }
 
   :root {

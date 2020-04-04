@@ -11,14 +11,17 @@ export default function Recovery({ countryData }) {
     <ContentWrapper>
       <h2>Top 10 Recovery Numbers and Recovery Rates</h2>
       {sortedByRecovered.map((country) => (
-        <p key={country.country}>
-          {country.country}
-          {country.recovered}
-          rate:
-          {Math.round(
-            (country.recovered / (country.cases - country.active)) * 100
-          )}
-        </p>
+        <div key={country.country}>
+          <h3>{country.country}</h3>
+          <p>Total Number of Recoveries: {country.recovered}</p>
+          <p>
+            Recovery Rate: &nbsp;
+            {Math.round(
+              (country.recovered / (country.cases - country.active)) * 100
+            )}
+            %
+          </p>
+        </div>
       ))}
     </ContentWrapper>
   )
@@ -27,12 +30,24 @@ export default function Recovery({ countryData }) {
 const ContentWrapper = styled.main`
   padding: 12px;
   overflow: scroll;
+
+  div {
+    background: var(--secondary);
+    padding: 6px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+  }
+
+  h3,
+  p {
+    padding: 0 16px;
+    border-radius: 12px;
+    color: white;
+  }
+
+  p {
+    background: var(--primary);
+    padding: 12px;
+    margin: 4px;
+  }
 `
-
-/*
-
-rate:
-          {Math.round(
-            (country.recovered / (country.cases - country.active)) * 100
-          )}
-        </p>*/
