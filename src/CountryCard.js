@@ -8,8 +8,9 @@ export default function CountryCard({ country }) {
     <CardBox key={country.country}>
       <h3 onClick={() => setToggled(!toggled)}>{country.country}</h3>
       <CardContent isVisible={toggled}>
-        <p>Cases: {country.cases}</p>
-        <p>Recovered: {country.recovered}</p>
+        <p>Total Cases: {country.cases}</p>
+        <p>Active Cases: {country.active}</p>
+        <p>Recovered Cases: {country.recovered}</p>
         <p>Cases per Million: {country.casesPerOneMillion}</p>
       </CardContent>
     </CardBox>

@@ -1,23 +1,24 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Recovery() {
-  const [countryData, setCoronaData] = useState([])
-
-  useEffect(() => {
-    fetch('https://corona.lmao.ninja/countries?sort=country')
-      .then((response) => response.json())
-      .then((data) => setCoronaData(data.reverse()))
-  }, [])
+export default function Recovery({ countryData }) {
+  const sortedByRecovered = countryData
+    .slice()
+    .sort((countryA, countryB) => countryB.recovered > countryA.recovered)
+    .slice(0, 11)
 
   return (
     <ContentWrapper>
-      <h2>Top 10 Countries with the Highest Recovery Numbers</h2>
-      {countryData.sort((countryA, countryB) => (
-        <h2 key={country.country}>
-          {' '}
-          {countryA.recovered > countryB.recovered}
-        </h2>
+      <h2>Top 10 Recovery Numbers and Recovery Rates</h2>
+      {sortedByRecovered.map((country) => (
+        <p key={country.country}>
+          {country.country}
+          {country.recovered}
+          rate:
+          {Math.round(
+            (country.recovered / (country.cases - country.active)) * 100
+          )}
+        </p>
       ))}
     </ContentWrapper>
   )
@@ -28,10 +29,10 @@ const ContentWrapper = styled.main`
   overflow: scroll;
 `
 
-/*<ContentWrapper>
-<h2>Top 10 Countries with the Highest Recovery Numbers</h2>
-{countryData.map((country) => (
-  <p key={country.country}>{country.recovered}</p>
-))
-.sort((countryA, countryB) => (<h2 countryA.recovered > countryB.recovered>{country.recovered}</h2>))}
-</ContentWrapper>*/
+/*
+
+rate:
+          {Math.round(
+            (country.recovered / (country.cases - country.active)) * 100
+          )}
+        </p>*/
