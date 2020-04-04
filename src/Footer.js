@@ -3,13 +3,13 @@ import styled from 'styled-components/macro'
 
 import stayhome from './img/stayhome.png'
 import global from './img/global.png'
-import germany from './img/germany.png'
+import recovery from './img/germany.png'
 
 export default function Footer({ setCurrentPage }) {
   const buttonData = [
     { images: stayhome, id: 'home' },
     { images: global, id: 'global' },
-    { images: germany, id: 'germany' },
+    { images: recovery, id: 'recovery' },
   ]
 
   return (

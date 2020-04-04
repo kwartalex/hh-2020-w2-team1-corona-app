@@ -4,7 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Home from './Home'
 import Global from './Global'
-import Germany from './Germany'
+import Recovery from './Recovery'
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -15,7 +15,7 @@ export default function App() {
       <Header />
       {currentPage === 'home' && <Home />}
       {currentPage === 'global' && <Global />}
-      {currentPage === 'germany' && <Germany />}
+      {currentPage === 'recovery' && <Recovery />}
       <Footer setCurrentPage={setCurrentPage} />
     </>
   )
