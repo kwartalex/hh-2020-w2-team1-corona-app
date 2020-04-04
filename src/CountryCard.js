@@ -8,9 +8,12 @@ export default function CountryCard({ country }) {
     <CardBox key={country.country}>
       <h3 onClick={() => setToggled(!toggled)}>{country.country}</h3>
       <CardContent isVisible={toggled}>
-        <p>Cases: {country.cases}</p>
-        <p>Recovered: {country.recovered}</p>
-        <p>Cases per Million: {country.casesPerOneMillion}</p>
+        <div>
+          <p>Total Cases: {country.cases}</p>
+          <p>Active Cases: {country.active}</p>
+          <p>Recovered Cases: {country.recovered}</p>
+          <p>Cases per Million: {country.casesPerOneMillion}</p>
+        </div>
       </CardContent>
     </CardBox>
   )
@@ -27,8 +30,15 @@ const CardBox = styled.section`
     padding: 0 16px;
   }
 
+  div {
+    background: var(--primary);
+    border-radius: 12px;
+    padding: 8px 0;
+  }
+
   p {
     margin: 0;
+    font-weight: 300;
   }
 `
 
