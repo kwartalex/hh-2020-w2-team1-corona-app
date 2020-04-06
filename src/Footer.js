@@ -5,7 +5,7 @@ import stayhome from './img/stayhome.png'
 import global from './img/global.png'
 import recovery from './img/germany.png'
 
-export default function Footer({ setCurrentPage }) {
+export default function Footer({ currentPage, setCurrentPage }) {
   const buttonData = [
     { images: stayhome, id: 'home' },
     { images: global, id: 'global' },
@@ -16,7 +16,16 @@ export default function Footer({ setCurrentPage }) {
     <FooterStyled>
       <nav>
         {buttonData.map((item) => (
-          <button key={item.id} onClick={() => setCurrentPage(item.id)}>
+          <button
+            key={item.id}
+            onClick={() => {
+              setCurrentPage(item.id)
+            }}
+            style={{
+              background:
+                item.id === currentPage ? 'var(--secondary)' : 'transparent',
+            }}
+          >
             <img src={item.images} alt={item.id} />
           </button>
         ))}
@@ -37,7 +46,6 @@ const FooterStyled = styled.footer`
   button {
     padding: 0;
     border: none;
-    background: transparent;
   }
 
   button > img {
@@ -46,3 +54,4 @@ const FooterStyled = styled.footer`
     margin-top: 4px;
   }
 `
+/*  onClick={() => setCurrentPage(item.id)} */

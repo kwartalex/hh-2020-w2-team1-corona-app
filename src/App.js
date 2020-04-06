@@ -23,7 +23,7 @@ export default function App() {
       {currentPage === 'home' && <Home />}
       {currentPage === 'global' && <Global countryData={countryData} />}
       {currentPage === 'recovery' && <Recovery countryData={countryData} />}
-      <Footer setCurrentPage={setCurrentPage} />
+      <Footer setCurrentPage={setCurrentPage} currentPage={currentPage} />
     </>
   )
 }

@@ -4,13 +4,13 @@ import styled from 'styled-components/macro'
 export default function Home() {
   return (
     <ContentWrapper>
-      <h2>Corontäne: Nicht so schlimm wie alle denken?</h2>
+      <h2>Corontäne: The Covid-19 Pandemic</h2>
       <p>
-        Die COVID-19-Pandemie (umgangssprachlich auch Coronavirus-Pandemie,
-        Corona-Pandemie, Coronavirus-Krise oder Corona-Krise, ehemals auch
-        Coronavirus-Epidemie) ist ein Ausbruch der neuartigen Atemwegserkrankung
-        COVID-19 (oder „Covid-19“, für englisch corona virus disease 2019).
-        Diese Erkrankung war erstmals Ende Dezember 2019 in der Millionenstadt
+        We are witnessing a substantial increase in the number of infections in
+        Germany. As a result, the authorities have imposed drastic restrictions
+        on everyday life, in a move to slow down any further spread of the
+        virus. On 11 March 2020, the Director-General of WHO declared the spate
+        of infections caused by SARS-CoV-2 (COVID-19) a pandemic.
       </p>
       <iframe
         width="100%"
