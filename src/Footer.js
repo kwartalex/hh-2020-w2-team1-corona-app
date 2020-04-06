@@ -1,33 +1,31 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import { NavLink } from 'react-router-dom'
 
 import stayhome from './img/stayhome.png'
 import global from './img/global.png'
 import recovery from './img/germany.png'
 
-export default function Footer({ currentPage, setCurrentPage }) {
-  const buttonData = [
-    { images: stayhome, id: 'home' },
-    { images: global, id: 'global' },
-    { images: recovery, id: 'recovery' },
+export default function Footer() {
+  const navData = [
+    { images: stayhome, id: '/' },
+    { images: global, id: '/global' },
+    { images: recovery, id: '/recovery' },
   ]
 
   return (
     <FooterStyled>
       <nav>
-        {buttonData.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => {
-              setCurrentPage(item.id)
-            }}
-            style={{
-              background:
-                item.id === currentPage ? 'var(--secondary)' : 'transparent',
+        {navData.map((item) => (
+          <NavLink
+            exact
+            to={item.id}
+            activeStyle={{
+              background: 'var(--secondary)',
             }}
           >
             <img src={item.images} alt={item.id} />
-          </button>
+          </NavLink>
         ))}
       </nav>
     </FooterStyled>
@@ -43,15 +41,9 @@ const FooterStyled = styled.footer`
     justify-content: space-evenly;
   }
 
-  button {
-    padding: 0;
-    border: none;
-  }
-
-  button > img {
+  img {
     box-sizing: content-box;
     height: 40px;
     margin-top: 4px;
   }
 `
-/*  onClick={() => setCurrentPage(item.id)} */
