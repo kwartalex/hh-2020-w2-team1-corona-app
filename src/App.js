@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import GlobalStyles from './GlobalStyles'
 import Header from './Header'
 import Footer from './Footer'
@@ -7,7 +8,6 @@ import Global from './Global'
 import Recovery from './Recovery'
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('home')
   const [countryData, setCountryData] = useState([])
 
   useEffect(() => {
@@ -17,13 +17,21 @@ export default function App() {
   }, [])
 
   return (
-    <>
+    <Router>
       <GlobalStyles />
       <Header />
-      {currentPage === 'home' && <Home />}
-      {currentPage === 'global' && <Global countryData={countryData} />}
-      {currentPage === 'recovery' && <Recovery countryData={countryData} />}
-      <Footer setCurrentPage={setCurrentPage} currentPage={currentPage} />
-    </>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/global">
+          <Global countryData={countryData} />
+        </Route>
+        <Route path="/recovery">
+          <Recovery countryData={countryData} />
+        </Route>
+      </Switch>
+      <Footer />
+    </Router>
   )
 }
