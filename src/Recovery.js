@@ -1,5 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
+
+Recovery.propTypes = {
+  countryData: PropTypes.array.isRequired,
+}
 
 export default function Recovery({ countryData }) {
   const sortedByRecovered = countryData
