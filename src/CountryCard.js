@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
+
+CountryCard.propTypes = {
+  country: PropTypes.object.isRequired,
+}
 
 export default function CountryCard({ country }) {
   const [toggled, setToggled] = useState(false)

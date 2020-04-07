@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react' 
 import styled from 'styled-components/macro'
 import CountryCard from './CountryCard'
+import PropTypes from 'prop-types'
+
+Global.propTypes = {
+  countryData: PropTypes.array.isRequired,
+}
 
 export default function Global({ countryData }) {
   return (
