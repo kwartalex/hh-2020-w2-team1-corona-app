@@ -6,14 +6,15 @@ import Footer from './Footer'
 import Home from './Home'
 import Global from './Global'
 import Recovery from './Recovery'
+import { loadCountries } from './services'
 
 export default function App() {
   const [countryData, setCountryData] = useState([])
 
   useEffect(() => {
-    fetch('https://corona.lmao.ninja/countries?sort=country')
-      .then((response) => response.json())
+    loadCountries()
       .then((data) => setCountryData(data.reverse()))
+      .catch((error) => console.log(error))
   }, [])
 
   return (
