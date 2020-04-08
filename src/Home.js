@@ -12,14 +12,6 @@ export default function Home() {
         virus. On 11 March 2020, the Director-General of WHO declared the spate
         of infections caused by SARS-CoV-2 (COVID-19) a pandemic.
       </p>
-      <iframe
-        width="100%"
-        height="36%"
-        src="https://www.youtube.com/embed/hMopOpiNB1s"
-        frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
     </ContentWrapper>
   )
 }

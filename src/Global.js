@@ -1,4 +1,4 @@
-import React from 'react' 
+import React from 'react'
 import styled from 'styled-components/macro'
 import CountryCard from './CountryCard'
 import PropTypes from 'prop-types'

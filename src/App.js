@@ -6,16 +6,29 @@ import Footer from './Footer'
 import Home from './Home'
 import Global from './Global'
 import Recovery from './Recovery'
-import { loadCountries } from './services'
+import { loadCountries, saveToStorage, loadFromStorage } from './services'
 
 export default function App() {
-  const [countryData, setCountryData] = useState([])
+  const localCountryData = loadFromStorage('countryData')
+  const [countryData, setCountryData] = useState([localCountryData || []])
+
+  const lastSavedDate = loadFromStorage('lastSavedDate')
 
   useEffect(() => {
-    loadCountries()
-      .then((data) => setCountryData(data.reverse()))
-      .catch((error) => console.log(error))
-  }, [])
+    lastSavedDate !== getCurrentDate() &&
+      loadCountries()
+        .then((data) => setCountryData(data.reverse()))
+        .catch((error) => console.log(error))
+  }, [lastSavedDate])
+
+  useEffect(() => {
+    saveToStorage('countryData', countryData)
+    saveToStorage('lastSavedDate', getCurrentDate())
+  }, [countryData])
+
+  function getCurrentDate() {
+    return new Date().toLocaleDateString('de-DE')
+  }
 
   return (
     <Router>
